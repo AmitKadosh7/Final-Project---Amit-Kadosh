@@ -1,0 +1,17 @@
+load SLT_P
+figure(7)
+indexes=2:9;
+index=(indexes-1)*N+indexes;
+P=reshape(p,M+1,K)
+for i=1:8
+    subplot(2,4,i)
+    if i>0
+
+    else
+        q_tmp=q(1:M+1,index(i));
+        p_tmp=P(1:M+1,index(i));
+    end
+    plot(q_tmp,p_tmp,'r',q_tmp,q_tmp,'b')
+    t=strcat('Mapping Function (',num2str(indexes(i)),',',num2str(num2str(indexes(i))),')');
+    title(t)
+end
